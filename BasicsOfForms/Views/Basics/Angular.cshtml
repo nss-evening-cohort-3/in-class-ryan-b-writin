@@ -1,17 +1,15 @@
 ﻿
 @{
-    Layout = null;
+
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Angular</title>
-</head>
-<body>
-    <div> 
-    </div>
-</body>
-</html>
+<div ng-controller="FormCtrl">
+@using (Html.BeginForm("Angular", "Basics", FormMethod.Post, new { id = "angularForm"}))
+{
+        @Html.AntiForgeryToken()
+        @Html.TextBox("email");
+        @Html.Password("password");
+        @Html.Password("confirm");
+        <button ng-click="formSubmit($event)">HONK</button>
+}
+</div>
