@@ -1,23 +1,13 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Razor</title>
-</head>
-<body>
-    @using (Html.BeginForm("Razor", "Basic", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-    {
-        @Html.AntiForgeryToken()
-        @Html.TextBox("Username");
-        @Html.Password("Password");
-        @Html.Password("Confirm Password");
-        <input type="submit" name="submit" />
-    }
-</body>
-</html>
+<title>Razor</title>
+<h2>Razor</h2>
+@using (Html.BeginForm("Razor", "Basics", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.TextBox("Username");
+    @Html.Password("Password");
+    @Html.Password("Confirm Password");
+    <input type="submit" name="submit" />
+}
